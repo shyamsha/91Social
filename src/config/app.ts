@@ -16,10 +16,10 @@ const config: Config = {
   env: "production",
   isProd: process.env.NODE_ENV === "production" || false,
   production: {
-    api_endpoint: 'https://api.punkapi.com/v2'
+    api_endpoint: 'https://api.spacexdata.com/v3'
   },
   staging: {
-    api_endpoint: 'https://api.punkapi.com/v2'
+    api_endpoint: 'https://api.spacexdata.com/v3'
   },
   development: {
     api_endpoint: ''

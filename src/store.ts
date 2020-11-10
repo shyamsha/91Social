@@ -3,9 +3,13 @@ import { RouterState, connectRouter } from 'connected-react-router';
 import { all, fork } from 'redux-saga/effects';
 import { History } from 'history'
 import { Reducer } from 'typesafe-actions';
-import { ToastBeersState } from './containers/dashboard/types';
-import { toastBeersReducer } from './containers/dashboard/reducers';
-import { toastBeersSaga } from './containers/dashboard/sagas';
+import { SpaceXHistoryState } from './containers/dashboard/types';
+import { SpaceXPayloadState } from './containers/payloads/types';
+import { HistorySaga } from './containers/dashboard/sagas';
+import { PayloadSaga } from './containers/payloads/sagas';
+import { spaceXHistoryReducer } from './containers/dashboard/reducers';
+import { spaceXPayloadReducer } from './containers/payloads/reducers';
+
 
 
 // The top-level state object.
@@ -13,7 +17,8 @@ import { toastBeersSaga } from './containers/dashboard/sagas';
 // `connected-react-router` already injects the router state typings for us,
 // so we can ignore them here.
 export interface ApplicationState {
-  toastBeers:ToastBeersState;
+  spaceXHistory:SpaceXHistoryState;
+  spaceXPayload:SpaceXPayloadState;
   router: RouterState<History.LocationState>
 }
 
@@ -27,7 +32,8 @@ export interface ConnectedReduxProps<A extends Action = AnyAction> {
 // the reducer acts on the corresponding ApplicationState property type.
 export const createRootReducer = (history: History) =>
   combineReducers({
-    toastBeers: toastBeersReducer as Reducer<ToastBeersState, AnyAction>,
+    spaceXHistory: spaceXHistoryReducer as Reducer<SpaceXHistoryState, AnyAction>,
+    spaceXPayload: spaceXPayloadReducer as Reducer<SpaceXPayloadState, AnyAction>,
     router: connectRouter(history)
   })
 
@@ -35,5 +41,6 @@ export const createRootReducer = (history: History) =>
 // "generator function", which you can read about here:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*
 export function* rootSaga() {
-  yield all([fork(toastBeersSaga)])
+  yield all([fork(HistorySaga)])
+  yield all([fork(PayloadSaga)])
 }

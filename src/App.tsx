@@ -6,12 +6,14 @@ import "./App.css";
 import AppNavigator from "./navigator/AppNavigator";
 import { ApplicationState } from "./store";
 import configureStore from "./configureStore";
-import { toastBeersInitialState } from "./containers/dashboard/reducers";
+import { spaceXHistoryInitialState } from "./containers/dashboard/reducers";
+import { spaceXPayloadInitialState } from "./containers/payloads/reducers";
 
 const history = createBrowserHistory();
 
 const initialState: ApplicationState = {
-  toastBeers: toastBeersInitialState,
+  spaceXHistory: spaceXHistoryInitialState,
+  spaceXPayload:spaceXPayloadInitialState,
   router: { location: history.location, action: "PUSH" },
 };
 

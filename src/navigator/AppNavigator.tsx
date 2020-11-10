@@ -1,8 +1,7 @@
 import React, { Fragment, Component, FC } from "react";
 import { Route, Switch } from "react-router";
 
-
-class AppNavigator extends Component<any, any> {
+class AppNavigator extends Component {
   App: FC = () => (
     <Fragment>
       <Switch>
