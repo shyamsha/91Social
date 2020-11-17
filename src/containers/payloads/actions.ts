@@ -1,7 +1,7 @@
 import { action } from "typesafe-actions";
 import { PayloadActionTypes, SpaceXPayload } from "./types";
 
-export const spaceXPayloadRequest = () => 
+export const spaceXPayloadRequest = (params:{limit:number,offset:number}) => 
 action(PayloadActionTypes.SPACE_X_PAYLOAD_REQUEST);
 export const spaceXPayloadSuccess = (res: SpaceXPayload[]) =>
 action(PayloadActionTypes.SPACE_X_PAYLOAD_SUCCESS, res);

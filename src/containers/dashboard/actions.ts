@@ -1,8 +1,8 @@
 import { action } from "typesafe-actions";
 import { HistoryActionTypes, SpaceXHistory } from "./types";
 
-export const spaceXHistoryRequest = () => 
-action(HistoryActionTypes.SPACE_X_HISTORY_REQUEST);
+export const spaceXHistoryRequest = (params:{limit:number,offset:number}) => 
+action(HistoryActionTypes.SPACE_X_HISTORY_REQUEST,params);
 export const spaceXHistorySuccess = (res: SpaceXHistory[]) =>
 action(HistoryActionTypes.SPACE_X_HISTORY_SUCCESS, res);
 export const spaceXHistoryError = (message: Error) =>

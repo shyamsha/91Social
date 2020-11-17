@@ -1,4 +1,4 @@
 export enum RouteEnums {
-    DASHBOARD = "dashboard",
+    PAYLOAD = "payload",
   }
   

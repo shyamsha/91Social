@@ -1,3 +1,4 @@
+@import "~antd/dist/antd.css";
 .App {
   text-align: center;
 }
@@ -15,14 +16,14 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 0 !important;
 }
+.ant-list-header{
+  padding: 0 !important;
+}
+
 
 .App-link {
   color: #61dafb;
@@ -35,4 +36,83 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0rem 2rem;
+}
+
+.list {
+  padding: 1rem;
+}
+
+.title {
+  color: #1c2d41;
+  font-family: "OpenSans-Regular";
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.subtitle {
+  color: #848ca3;
+  font-family: "OpenSans-Light";
+  font-size: 0.75rem;
+  font-weight: 400;
+  display: flex;
+}
+
+.container {
+  padding: 0.5rem 0.5rem;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+.switch {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 0.5rem;
+}
+
+.img {
+  margin: auto !important;
+  display: block !important;
+  padding-top: 4px;
+}
+
+.ant-card-cover > * {
+  width: 25%;
+}
+
+tr:last-child td {
+  padding-bottom: 0;
+}
+.ant-statistic-content {
+  font-size: 20px;
+  line-height: 28px;
+}
+.content {
+  display: flex;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.items{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.enditems{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
